@@ -1,0 +1,268 @@
+/* Estilos principales del EcoScan AI */
+
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: var(--primary-dark);
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+header p {
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.media-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #111;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+}
+
+#preview {
+    display: none;
+}
+
+.placeholder-text {
+    color: #888;
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 130px;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: #3498db;
+}
+
+.btn-secondary:hover {
+    background-color: #2980b9;
+}
+
+.input[type="file"] {
+    display: none;
+}
+
+.result-card {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    border-left: 6px solid #ccc;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.result-card.active {
+    display: block;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.confidence-badge {
+    background: #e0e0e0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.instruction {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-left-color: var(--primary);
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos específicos de categorías */
+.cat-organico {
+    border-color: #d35400;
+    background-color: #fdf2e9;
+}
+
+.cat-organico .category-title {
+    color: #d35400;
+}
+
+.cat-plastico {
+    border-color: #f1c40f;
+    background-color: #fef9e7;
+}
+
+.cat-plastico .category-title {
+    color: #f39c12;
+}
+
+.cat-papel {
+    border-color: #2980b9;
+    background-color: #ebf5fb;
+}
+
+.cat-papel .category-title {
+    color: #2980b9;
+}
+
+.cat-vidrio {
+    border-color: #27ae60;
+    background-color: #eafaf1;
+}
+
+.cat-vidrio .category-title {
+    color: #27ae60;
+}
+
+.cat-general {
+    border-color: #7f8c8d;
+    background-color: #f2f4f4;
+}
+
+.cat-general .category-title {
+    color: #7f8c8d;
+}
+
+/* Barra lateral de evidencia */
+.tlh7bar {
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 0 12px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Segoe UI,Arial;
+}
+
+.tlh7bar a,
+.tlh7bar span {
+    padding: 9px 13px;
+    border-radius: 999px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.tlh7bar a {
+    background: #10283f;
+    color: #fff;
+}
+
+.tlh7bar span {
+    background: #edf7ff;
+    color: #10283f;
+    border: 1px solid #cde3ef;
+}
+/* Confirmación del material: hidden debe prevalecer sobre display. */
+.material-confirmation[hidden] { display: none !important; }
+.material-confirmation { margin: 18px 0; padding: 18px; border: 1px solid #cbd5e1; border-radius: 12px; background: #f8fafc; }
+.material-confirmation label { display: block; font-weight: 700; margin-bottom: 8px; }
+.material-confirmation select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #94a3b8; font: inherit; }
+.material-note { font-size: .85rem; color: #475569; margin: 10px 0 0; }

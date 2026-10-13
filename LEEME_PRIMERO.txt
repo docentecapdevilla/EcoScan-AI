@@ -1,0 +1,28 @@
+ECOSCAN AI - PROYECTO COMPLETO (4 MODELOS)
+=========================================
+1. Extrae la carpeta EcoScan_AI del ZIP en un lugar definitivo, por ejemplo Documentos.
+2. En Windows haz doble clic en INICIAR_ECOSCAN.bat.
+3. Espera a que el servidor anuncie http://127.0.0.1:8765.
+4. Abre esa direccion en Chrome y presiona Ctrl+F5 si habias usado una version anterior.
+
+FUNCIONES:
+- Una sola camara; captura fotografica y analisis en vivo.
+- YOLOv8: deteccion de residuos con cajas.
+- MobileNet ImageNet: objetos comunes (requiere internet/CDN para primera carga).
+- Experimental: clasificacion organico/reutilizable (solo dos clases).
+- MobileNetV2 especializado: seis categorias de residuos.
+- Ficha tecnica, confirmacion docente y exportacion CSV.
+
+MEJORAS DE ESTA EDICION:
+- Bloqueo de inferencias YOLO simultaneas para evitar colisiones en el servidor.
+- Ruta http://127.0.0.1:8765/api/health para comprobar presencia de modelos.
+- Lanzador BAT unico que verifica dependencias e instala las que falten.
+- Correccion de nombres de capas del checkpoint MobileNetV2.
+- Correccion de la interpretacion de la clase literal plastic de YOLO.
+
+IMPORTANTE:
+- La exactitud anunciada por el autor de MobileNetV2 NO garantiza precision real.
+- Las predicciones NO sustituyen la confirmacion de material por docente.
+- La camara del celular desde otro equipo requiere publicacion HTTPS y servidor accesible.
+- El CSV solo guarda las evidencias que registres; la sesion no es almacenamiento permanente.
+- No hace falta descargar ningun otro archivo del proyecto.

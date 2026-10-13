@@ -1,0 +1,25 @@
+EcoScan AI - corrección sobre el ZIP recibido (fase de estabilidad local)
+
+Cambios:
+- Se sustituyó la llamada inexistente EcoScanValidation.init por las APIs reales de los paneles de estudiante, docente y visualización.
+- El historial se reconstruye al abrir la página leyendo ecoscan_records.
+- El historial permite abrir imágenes de IndexedDB y validar posteriormente registros pendientes.
+- El guardado de imágenes se realiza tras guardar el registro, evitando imágenes huérfanas por duplicación.
+- Se corrigió el operador de precedencia de hashImage y se guarda SHA-256 completo para nuevos registros.
+- Se conserva la estructura de modelos y server.py originales.
+
+LIMITACIONES IMPORTANTES:
+- No se ha realizado prueba real en Chrome con los cuatro modelos en un equipo Windows; se validó sintaxis JS.
+- El flujo actual sigue solicitando la respuesta del estudiante DESPUÉS de ejecutar los modelos; para investigación se debe capturar ANTES de mostrar las predicciones.
+- Los datos y las imágenes siguen siendo locales al navegador. No existe sincronización entre computadores ni autenticación docente.
+- No se recuperan imágenes anteriores que nunca se guardaron en IndexedDB.
+- CSV exporta registros, pero no incluye los bytes de las imágenes.
+- Conserve el ZIP original y cualquier CSV de respaldo. No pulse 'Limpiar registros'.
+
+Prueba manual:
+1. Inicie python server.py y abra http://127.0.0.1:8765.
+2. Cargue imagen y seleccione respuesta en panel, guarde como pendiente.
+3. Recargue la página y verifique que la fila continúe.
+4. Pulse 'Revisar / validar'; debe aparecer fotografía si se guardó correctamente.
+5. Seleccione material docente y guarde validación; compruebe estado validado.
+6. Exporte CSV. Repita con segunda imagen.

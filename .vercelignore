@@ -1,0 +1,10 @@
+INICIAR_ECOSCAN.bat
+test_image.jpg
+docs/
+REVISION_CHATGPT.txt
+LEEME_PRIMERO.txt
+__pycache__/
+.venv/
+venv/
+.env
+.env.*

@@ -1,0 +1,6 @@
+ultralytics>=8.3,<9
+torch>=2.3,<3
+torchvision>=0.18,<1
+pillow>=10,<13
+flask>=3.0,<4
+numpy>=1.26,<3

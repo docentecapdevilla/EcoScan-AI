@@ -1,0 +1,10 @@
+{
+  "classes": [
+    { "id": 0, "name_es": "Plástico" },
+    { "id": 1, "name_es": "Vidrio" },
+    { "id": 2, "name_es": "Metal" },
+    { "id": 3, "name_es": "Papel y cartón" },
+    { "id": 4, "name_es": "Orgánico" },
+    { "id": 5, "name_es": "No reciclable" }
+  ]
+}
